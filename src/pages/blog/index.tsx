@@ -10,7 +10,7 @@ import {
   NoLinkTags,
   PostTitle,
 } from '../../components/blog-parts'
-import AdSense from '../../components/adsense'
+import { AdSense } from '../../components/adsense'
 import styles from '../../styles/blog.module.css'
 import {
   getPosts,
