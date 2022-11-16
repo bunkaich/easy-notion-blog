@@ -19,8 +19,8 @@ export const AdSense = () => {
   return (
     <div key={asPath}>
       <ins
-        class="adsbygoogle"
-        style="display:block"
+        className="adsbygoogle"
+        style={{ display: "block" }}
         data-ad-client="ca-pub-5383551939627739"
         data-ad-slot="9189691430"
         data-ad-format="auto"
