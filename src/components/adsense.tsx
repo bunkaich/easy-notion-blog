@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 import { useEffect, VFC } from "react";
 
 declare global {
-  const adsbygoogle: unknown[];
+  var adsbygoogle: unknown[];
 }
 
 export const AdSense: VFC = () => {
