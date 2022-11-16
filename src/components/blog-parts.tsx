@@ -51,7 +51,7 @@ export const NoLinkTags = ({ post }) => (
     {post.Tags &&
       post.Tags.length > 0 &&
       post.Tags.map((tag: string) => (
-          <span>{tag}</span>
+          <span key={tag}>{tag}</span>
       ))}
   </div>
 )

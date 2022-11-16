@@ -59,9 +59,9 @@ const RenderPosts = ({
         {posts.map(post => {
           const ogSlug = post.OGImage ? "/api/og-image/" + post.Slug : "/default.png"
           return (
-            <Link href="/blog/[slug]" as={getBlogLink(post.Slug)} passHref>
+            <Link href="/blog/[slug]" as={getBlogLink(post.Slug)} passHref key={post.Slug}>
               <a>
-                <div className={styles.eachPost} key={post.Slug}>
+                <div className={styles.eachPost}>
                   <figure>
                     <Image
                       src={ogSlug}
