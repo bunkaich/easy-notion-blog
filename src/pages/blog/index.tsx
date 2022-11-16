@@ -1,5 +1,6 @@
 import DocumentHead from '../../components/document-head'
 import Link from 'next/link'
+import Image from 'next/image'
 import {
   BlogPostLink,
   BlogTagLink,
@@ -61,10 +62,15 @@ const RenderPosts = ({
             <Link href="/blog/[slug]" as={getBlogLink(post.Slug)} passHref>
               <a>
                 <div className={styles.eachPost} key={post.Slug}>
-                  <img
-                    src={ogSlug}
-                    alt="thumbnail"
-                  />
+                  <figure>
+                    <Image
+                      src={ogSlug}
+                      alt="thumbnail"
+                      layout="fill"
+                      objectFit="cover"
+                      sizes="(min-width: 1152px) 576px, 50vw"
+                    />
+                  </figure>
                   <div className={styles.postContentWrap}>
                     <div className={styles.spaceBetween}>
                       <PostDate post={post} />
