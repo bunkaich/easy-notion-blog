@@ -7,7 +7,14 @@
     display: block;
   }
 }
-
+.contentBody {
+  width: 60%;
+}
+@media (max-width: 600px) {
+  .contentBody {
+    width: 100%;
+  }
+}
 .mainContent {
   width: 60%;
   display: grid;

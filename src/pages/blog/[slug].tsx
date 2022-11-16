@@ -128,7 +128,7 @@ const RenderPost = ({
         urlOgImage={NEXT_PUBLIC_URL && new URL(`/api/og-image/${post.Slug}`, NEXT_PUBLIC_URL).toString()}
       />
 
-      <div className={styles.mainContent}>
+      <div className={styles.contentBody}>
         <div className={styles.post}>
           <PostDate post={post} />
           <PostTags post={post} />
