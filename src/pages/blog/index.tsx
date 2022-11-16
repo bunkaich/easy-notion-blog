@@ -7,11 +7,8 @@ import {
   NextPageLink,
   NoContents,
   PostDate,
-  PostExcerpt,
-  PostTags,
   NoLinkTags,
   PostTitle,
-  ReadMoreLink,
 } from '../../components/blog-parts'
 import styles from '../../styles/blog.module.css'
 import {
