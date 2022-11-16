@@ -36,4 +36,7 @@ module.exports = {
   },
 
   outputFileTracing: false,
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
 }
