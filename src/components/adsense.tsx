@@ -5,7 +5,7 @@ declare global {
   var adsbygoogle: unknown[]
 }
 
-export const AdSense = () => {
+export const AdSense: React.VFC = () => {
   const { asPath } = useRouter()
 
   useEffect(() => {
