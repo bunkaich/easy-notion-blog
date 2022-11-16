@@ -1,20 +1,20 @@
-import { useRouter } from 'next/router'
-import { useEffect } from 'react'
+import { useRouter } from "next/router";
+import { useEffect, VFC } from "react";
 
 declare global {
-  var adsbygoogle: unknown[]
+  var adsbygoogle: unknown[];
 }
 
-export const AdSense: React.VFC = () => {
-  const { asPath } = useRouter()
+export const AdSense: VFC = () => {
+  const { asPath } = useRouter();
 
   useEffect(() => {
     try {
-      (adsbygoogle = window.adsbygoogle || []).push({})
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
     } catch (error) {
       console.error(error);
     }
-  }, [asPath])
+  }, [asPath]);
 
   return (
     <div key={asPath}>
