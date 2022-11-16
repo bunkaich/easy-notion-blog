@@ -54,7 +54,7 @@ const DocumentHead = ({ title = '', description = '', urlOgImage = '' }) => {
       <script
         async
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5383551939627739"
-        crossorigin="anonymous"
+        crossOrigin="anonymous"
       />
     </Head>
   )
