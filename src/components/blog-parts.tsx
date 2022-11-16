@@ -18,7 +18,7 @@ export const PostDate = ({ post }) => (
   </div>
 )
 
-export const PostTitle = ({ post, enableLink = true }) => {
+export const PostTitle = ({ post, enableLink = false }) => {
   const postTitle = post.Title ? post.Title : ''
 
   return (
@@ -42,6 +42,16 @@ export const PostTags = ({ post }) => (
         <Link href="/blog/tag/[tag]" as={getTagLink(tag)} key={tag} passHref>
           <a>{tag}</a>
         </Link>
+      ))}
+  </div>
+)
+
+export const NoLinkTags = ({ post }) => (
+  <div className={styles.postTags}>
+    {post.Tags &&
+      post.Tags.length > 0 &&
+      post.Tags.map((tag: string) => (
+          <span>{tag}</span>
       ))}
   </div>
 )

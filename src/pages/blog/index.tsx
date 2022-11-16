@@ -1,4 +1,5 @@
 import DocumentHead from '../../components/document-head'
+import Link from 'next/link'
 import {
   BlogPostLink,
   BlogTagLink,
@@ -7,6 +8,7 @@ import {
   PostDate,
   PostExcerpt,
   PostTags,
+  NoLinkTags,
   PostTitle,
   ReadMoreLink,
 } from '../../components/blog-parts'
@@ -17,6 +19,9 @@ import {
   getRankedPosts,
   getAllTags,
 } from '../../lib/notion/client'
+import {
+  getBlogLink,
+} from '../../lib/blog-helpers'
 
 export async function getStaticProps() {
   const [posts, firstPost, rankedPosts, tags] = await Promise.all([
@@ -25,7 +30,7 @@ export async function getStaticProps() {
     getRankedPosts(),
     getAllTags(),
   ])
-
+  //console.log(posts)
   return {
     props: {
       posts,
@@ -51,14 +56,25 @@ const RenderPosts = ({
         <NoContents contents={posts} />
 
         {posts.map(post => {
+          const ogSlug = post.OGImage ? "/api/og-image/" + post.Slug : "/default.png"
           return (
-            <div className={styles.post} key={post.Slug}>
-              <PostDate post={post} />
-              <PostTags post={post} />
-              <PostTitle post={post} />
-              <PostExcerpt post={post} />
-              <ReadMoreLink post={post} />
-            </div>
+            <Link href="/blog/[slug]" as={getBlogLink(post.Slug)} passHref>
+              <a>
+                <div className={styles.eachPost} key={post.Slug}>
+                  <img
+                    src={ogSlug}
+                    alt="thumbnail"
+                  />
+                  <div className={styles.postContentWrap}>
+                    <div className={styles.spaceBetween}>
+                      <PostDate post={post} />
+                      <NoLinkTags post={post} />
+                    </div>
+                    <PostTitle post={post} />
+                  </div>
+                </div>
+              </a>
+            </Link>
           )
         })}
 

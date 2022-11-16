@@ -11,7 +11,7 @@
 }
 
 .postTitle {
-  font-size: 1.6rem;
+  font-size: 1.2rem;
   color: var(--fg);
 }
 @media (max-width: 600px) {
