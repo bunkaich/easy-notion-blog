@@ -51,6 +51,11 @@ const DocumentHead = ({ title = '', description = '', urlOgImage = '' }) => {
           href={new URL(asPath, NEXT_PUBLIC_URL).toString()}
         />
       ) : null}
+      <script
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5383551939627739"
+        crossorigin="anonymous"
+      />
     </Head>
   )
 }
