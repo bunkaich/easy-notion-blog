@@ -28,7 +28,6 @@ import {
   getAllTags,
   getAllBlocksByBlockId,
 } from '../../lib/notion/client'
-import { AdSense } from '../../components/adsense'
 
 export async function getStaticProps({ params: { slug } }) {
   const post = await getPostBySlug(slug)
