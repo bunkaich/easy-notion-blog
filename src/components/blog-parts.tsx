@@ -11,6 +11,7 @@ import {
   getTagBeforeLink,
 } from '../lib/blog-helpers'
 import styles from '../styles/blog-parts.module.css'
+import { AdSense } from './adsense'
 
 export const PostDate = ({ post }) => (
   <div className={styles.postDate}>
@@ -65,6 +66,7 @@ export const PostExcerpt = ({ post }) => (
 export const PostBody = ({ blocks }) => (
   <div className={styles.postBody}>
     <NotionBlocks blocks={blocks} />
+    <AdSense />
   </div>
 )
 
