@@ -9,7 +9,9 @@
 .postTags a {
   padding-right: 0.8rem;
 }
-
+.postTags span {
+  margin-left: 0.5rem;
+}
 .postTitle {
   font-size: 1.2rem;
   color: var(--fg);
